@@ -1,0 +1,42 @@
+essay = "  python is a versatile language. it supports object oriented, functional, and procedural programming. python is widely used in data science and machine learning.  "
+
+# 1. Strip leading and trailing whitespace
+clean_essay = essay.strip()
+print("1. Clean essay (stripped):")
+print(f"'{clean_essay}'")
+print()
+
+# 2. Convert to Title Case
+title_essay = clean_essay.title()
+print("2. Title case:")
+print(title_essay)
+print()
+
+# 3. Count "python" (case-insensitive on clean_essay)
+# clean_essay is already lowercase except for punctuation/spacing
+python_count = clean_essay.count("python")
+print("3. Count of 'python':", python_count)
+print()
+
+# 4. Replace "python" with "Python 🐍"
+replaced_essay = clean_essay.replace("python", "Python 🐍")
+print("4. Replaced 'python':")
+print(replaced_essay)
+print()
+
+# 5. Split into sentences by ". "
+sentences = clean_essay.split(". ")
+print("5. Split sentences (list):")
+print(sentences)
+print()
+
+# 6. Print numbered sentences with "." at the end if missing
+print("6. Numbered sentences:")
+for i in range(len(sentences)):
+    sentence = sentences[i]
+    # Check if the sentence already ends with a period
+    if not sentence.endswith("."):
+        sentence = sentence + "."
+    
+    # Print with number starting from 1
+    print(str(i + 1) + ". " + sentence)

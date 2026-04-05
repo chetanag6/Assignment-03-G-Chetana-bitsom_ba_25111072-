@@ -1,0 +1,76 @@
+student_name = "Ayesha Sharma"
+subjects = ["Math", "Physics", "CS", "English", "Chemistry"]
+marks = [88, 72, 95, 60, 78]
+
+# Print subjects with grades using for loop
+print("Subjects and Grades:")
+for i in range(len(subjects)):
+    subject = subjects[i]
+    mark = marks[i]
+    
+    if mark >= 90:
+        grade = "A+"
+    elif mark >= 80:
+        grade = "A"
+    elif mark >= 70:
+        grade = "B"
+    elif mark >= 60:
+        grade = "C"
+    else:
+        grade = "F"
+    
+    print(f"{subject}: {mark} ({grade})")
+
+# Calculate and print stats
+total = 0
+for m in marks:
+    total += m
+
+average = total / len(marks)
+print(f"\nTotal marks: {total}")
+print(f"Average marks: {average:.2f}")
+
+# Find highest and lowest
+max_idx = 0
+min_idx = 0
+for i in range(1, len(marks)):
+    if marks[i] > marks[max_idx]:
+        max_idx = i
+    if marks[i] < marks[min_idx]:
+        min_idx = i
+
+print(f"Highest: {subjects[max_idx]} ({marks[max_idx]})")
+print(f"Lowest: {subjects[min_idx]} ({marks[min_idx]})")
+
+# While loop for adding new subjects
+new_subjects = []
+new_marks = []
+count = 0
+
+print("\n--- Add New Subjects ---")
+while True:
+    subject = input("Enter subject name (or 'done' to finish): ")
+    if subject.lower() == "done":
+        break
+    
+    try:
+        mark = float(input("Enter marks (0-100): "))
+        if 0 <= mark <= 100:
+            new_subjects.append(subject)
+            new_marks.append(mark)
+            count += 1
+            print("Added successfully!")
+        else:
+            print("Warning: Marks must be between 0-100")
+    except ValueError:
+        print("Warning: Please enter a valid number")
+
+print(f"\nAdded {count} new subjects")
+
+# Updated average
+all_marks = marks + new_marks
+if len(all_marks) > 0:
+    updated_avg = sum(all_marks) / len(all_marks)
+    print(f"Updated average: {updated_avg:.2f}")
+else:
+    print("No marks available")

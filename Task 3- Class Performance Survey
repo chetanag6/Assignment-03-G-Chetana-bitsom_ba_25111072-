@@ -1,0 +1,63 @@
+class_data = [
+    ("Ayesha Sharma",  [88, 72, 95, 60, 78]),
+    ("Rohit Verma",    [55, 68, 49, 72, 61]),
+    ("Priya Nair",     [91, 85, 88, 94, 79]),
+    ("Karan Mehta",    [40, 55, 38, 62, 50]),
+    ("Sneha Pillai",   [75, 80, 70, 68, 85]),
+]
+
+print("Name              | Average | Status")
+print("----------------------------------------")
+
+pass_count = 0
+fail_count = 0
+all_averages = []
+topper_name = ""
+topper_avg = 0.0
+
+i = 0
+while i < len(class_data):
+    name = class_data[i][0]
+    marks = class_data[i][1]
+    
+    total = 0
+    j = 0
+    while j < len(marks):
+        total = total + marks[j]
+        j = j + 1
+    
+    avg = total / len(marks)
+    
+    if avg >= 60:
+        status = "Pass"
+        pass_count = pass_count + 1
+    else:
+        status = "Fail"
+        fail_count = fail_count + 1
+    
+    avg_str = str(round(avg, 1))
+    spaces = " " * (18 - len(name))
+    avg_padded = avg_str.rjust(6)
+    
+    print(name + spaces + " | " + avg_padded + "  | " + status)
+    
+    all_averages.append(avg)
+    if avg > topper_avg:
+        topper_avg = avg
+        topper_name = name
+    
+    i = i + 1
+
+class_total = 0
+k = 0
+while k < len(all_averages):
+    class_total = class_total + all_averages[k]
+    k = k + 1
+
+class_avg = class_total / len(all_averages)
+class_avg_rounded = round(class_avg, 2)
+
+print("\n--- Class Summary ---")
+print("Passed: " + str(pass_count) + ", Failed: " + str(fail_count))
+print("Class Topper: " + topper_name + " (" + str(round(topper_avg, 1)) + ")")
+print("Class Average: " + str(class_avg_rounded))

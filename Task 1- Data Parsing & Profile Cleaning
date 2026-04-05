@@ -1,0 +1,48 @@
+raw_students = [
+    {"name": "  ayesha SHARMA  ", "roll": "101", "marks_str": "88, 72, 95, 60, 78"},
+    {"name": "ROHIT verma",       "roll": "102", "marks_str": "55, 68, 49, 72, 61"},
+    {"name": "  Priya Nair  ",    "roll": "103", "marks_str": "91, 85, 88, 94, 79"},
+    {"name": "karan MEHTA",       "roll": "104", "marks_str": "40, 55, 38, 62, 50"},
+    {"name": " Sneha pillai ",    "roll": "105", "marks_str": "75, 80, 70, 68, 85"},
+]
+
+for s in raw_students:
+    # clean name
+    name = s["name"].strip()
+    name = name.title()
+    
+    # clean roll
+    roll_num = int(s["roll"])
+    
+    # clean marks
+    marks_list = []
+    marks_parts = s["marks_str"].split(", ")
+    for mark in marks_parts:
+        marks_list.append(int(mark))
+    
+    # check if name is valid
+    words = name.split()
+    valid = True
+    for word in words:
+        if not word.isalpha():
+            valid = False
+            break
+    
+    # print card
+    print("========================================")
+    print(f"Student : {name}", end=" ")
+    if valid:
+        print("✓ Valid name")
+    else:
+        print("✗ Invalid name")
+    print(f"Roll No : {roll_num}")
+    print(f"Marks   : {marks_list}")
+    print("========================================")
+
+# find roll 103
+for s in raw_students:
+    if int(s["roll"]) == 103:
+        clean_name = s["name"].strip().title()
+        print(f"\nStudent 103 - ALL CAPS: {clean_name.upper()}")
+        print(f"Student 103 - lowercase: {clean_name.lower()}")
+        break
