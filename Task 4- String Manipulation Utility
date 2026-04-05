@@ -39,4 +39,19 @@ for i in range(len(sentences)):
         sentence = sentence + "."
     
     # Print with number starting from 1
-    print(str(i + 1) + ". " + sentence)
+    print(str(i + 1) + ". " + sentence) 
+
+Output:
+
+Name              | Average | Status
+----------------------------------------
+Ayesha Sharma     |  78.60  | Pass
+Rohit Verma       |  61.00  | Pass
+Priya Nair        |  87.40  | Pass
+Karan Mehta       |  49.00  | Fail
+Sneha Pillai      |  75.60  | Pass
+
+--- Class Summary ---
+Passed: 4, Failed: 1
+Class Topper: Priya Nair (87.40)
+Class Average: 70.32
