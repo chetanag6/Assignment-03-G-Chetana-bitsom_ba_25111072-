@@ -60,4 +60,34 @@ class_avg_rounded = round(class_avg, 2)
 print("\n--- Class Summary ---")
 print("Passed: " + str(pass_count) + ", Failed: " + str(fail_count))
 print("Class Topper: " + topper_name + " (" + str(round(topper_avg, 1)) + ")")
-print("Class Average: " + str(class_avg_rounded))
+print("Class Average: " + str(class_avg_rounded)) 
+
+Output:
+
+Subjects and Grades:
+Math: 88 (A)
+Physics: 72 (B)
+CS: 95 (A+)
+English: 60 (C)
+Chemistry: 78 (B)
+
+Total marks: 393
+Average marks: 78.60
+Highest: CS (95)
+Lowest: English (60)
+
+--- Add New Subjects ---
+Enter subject name (or 'done' to finish): 
+Enter subject name: Biology
+Enter marks (0-100): 85
+Added successfully!
+Enter subject name: History  
+Enter marks (0-100): abc
+Warning: Please enter a valid number
+Enter subject name: Art
+Enter marks (0-100): 110
+Warning: Marks must be between 0-100
+Enter subject name: done
+
+Added 1 new subjects
+Updated average: 79.00
