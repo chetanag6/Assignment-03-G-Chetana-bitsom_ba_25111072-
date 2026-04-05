@@ -46,3 +46,34 @@ for s in raw_students:
         print(f"\nStudent 103 - ALL CAPS: {clean_name.upper()}")
         print(f"Student 103 - lowercase: {clean_name.lower()}")
         break
+
+Output:
+
+========================================
+Student : Ayesha Sharma ✓ Valid name
+Roll No : 101
+Marks   : [88, 72, 95, 60, 78]
+========================================
+========================================
+Student : Rohit Verma ✓ Valid name
+Roll No : 102
+Marks   : [55, 68, 49, 72, 61]
+========================================
+========================================
+Student : Priya Nair ✓ Valid name
+Roll No : 103
+Marks   : [91, 85, 88, 94, 79]
+========================================
+========================================
+Student : Karan Mehta ✓ Valid name
+Roll No : 104
+Marks   : [40, 55, 38, 62, 50]
+========================================
+========================================
+Student : Sneha Pillai ✓ Valid name
+Roll No : 105
+Marks   : [75, 80, 70, 68, 85]
+========================================
+
+Student 103 - ALL CAPS: PRIYA NAIR
+Student 103 - lowercase: priya nair
