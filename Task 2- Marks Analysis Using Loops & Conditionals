@@ -74,3 +74,20 @@ if len(all_marks) > 0:
     print(f"Updated average: {updated_avg:.2f}")
 else:
     print("No marks available")
+
+Output:
+
+Subjects and Grades:
+Math: 88 (A)
+Physics: 72 (B)
+CS: 95 (A+)
+English: 60 (C)
+Chemistry: 78 (B)
+
+Total marks: 393
+Average marks: 78.60
+Highest: CS (95)
+Lowest: English (60)
+
+--- Add New Subjects ---
+Enter subject name (or 'done' to finish): 
